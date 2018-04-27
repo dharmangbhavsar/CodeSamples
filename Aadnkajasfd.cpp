@@ -20,7 +20,8 @@ size_t *_Idx = 0,
 int _Base = 10
 );
 std::string::size_type sz;
-int main() {
+int main() 
+{
     fw;fr;
     iOs;
     int score[2] = {0};
@@ -31,7 +32,8 @@ int main() {
     cin >> t;
     string temp;
     //vi v;
-    while(t--) {
+    while(t--) 
+    {
         string type;
         string name;
         string numbers;
@@ -40,77 +42,105 @@ int main() {
         vi v;
         //int r_ans=1,u_ans;
         cin >> type;
-        if(type[0] == 'A' and ques) {
+        if(type[0] == 'A' and ques) 
+        {
             ques = false;
             cin >> name;
             cin >> uans;
-            if(uans[0] == 'P') {
-                    if(name[0] == 'D') {
+            if(uans[0] == 'P') 
+            {
+                    if(name[0] == 'D') 
+                    {
                         //score[0] += 10;
                         cout << "Sally's question is: " << temp << endl;
                         cout <<  "Question is PASSed" << endl;
                         cout << "Answer is: " << r_ans << endl;
                         cout << "Darrell: " << score[0] << "points" << endl;
-                    } else if(name[0] == 'S') {
+                    } 
+                    else if(name[0] == 'S') 
+                    {
                         //score[1] += 10;
                         cout << "Darrell's question is: " << temp << endl;
                         cout << "Question is PASSed" << endl;
                         cout << "Answer is: " << r_ans << endl;
                         cout << "Sally: " << score[1] << "points" << endl;
-                    } else {
+                    } 
+                    else 
+                    {
                         cout << "Invalid Input";
                         return 0;
                     }
 
-            } else {
+            }
+            else 
+            {
                 u_ans = stoi(uans,nullptr,20);
-                if(u_ans == r_ans) {
-                    if(name[0] == 'D') {
+                if(u_ans == r_ans) 
+                {
+                    if(name[0] == 'D') 
+                    {
                         score[0] += 10;
                         cout << "Sally's question is: " << temp << endl;
                         cout <<  "Correct Answer" << endl;
                         cout << "Darrell: " << score[0] << "points" <<  endl;
-                    } else if(name[0] == 'S') {
+                    } 
+                    else if(name[0] == 'S') 
+                    {
                         score[1] += 10;
                         cout << "Darrell's question is: " << temp << endl;
                         cout << "Correct Answer" << endl;
                         cout << "Sally: " << score[1] << "points"<< endl;
-                    } else {
+                    } 
+                    else 
+                    {
                         cout << "Invalid Input";
                         return 0;
                     }
-                } else {
-                    if(name[0] == 'D') {
+                } 
+                else 
+                {
+                    if(name[0] == 'D') 
+                    {
                         //score[0] += 10;
                         cout << "Sally's question is: " << temp << endl;
                         cout <<  "Wrong Answer" << endl;
                         cout << "Darrell: " << score[0] <<"points" <<endl;
-                    } else if(name[0] == 'S') {
+                    } 
+                    else if(name[0] == 'S') 
+                    {
                         //score[1] += 10;
                         cout << "Darrell's question is: " << temp << endl;
                         cout << "Wrong Answer" << endl;
                         cout << "Sally: " << score[1] << "points"<<endl;
-                    } else {
+                    } 
+                    else 
+                    {
                         cout << "Invalid Input";
                         return 0;
                     }
                 }
             }
             //r_ans=1;
-        } else if(!ques and type[0]!= 'A') {
+        } 
+        else if(!ques and type[0]!= 'A') 
+        {
             r_ans=1;
             ques = true;
-            if(!(first[0] or first[1])){
-                if(type[0] == 'D'){
+            if(!(first[0] or first[1]))
+            {
+                if(type[0] == 'D')
+                {
                     first[0] = true;
                 }
-                else{
+                else
+                {
                     first[1] = true;
                 }
             }
             //cin >> name;
             cin >> numbers;
-            if(numbers == "") {
+            if(numbers == "") 
+            {
                 cout << "Invalid Input";
                 return 0;
             }
@@ -118,38 +148,47 @@ int main() {
             temp = numbers;
             stringstream ss(numbers);
             int x;
-            while(ss >> x) {
+            while(ss >> x) 
+            {
                 v.pb(x);
-                if(ss.peek() == ',') {
+                if(ss.peek() == ',') 
+                {
                     ss.ignore();
                 }
             }
-            for(int i=0; i<v.size(); i++) {
+            for(int i=0; i<v.size(); i++) 
+            {
                 r_ans = r_ans*v[i]/__gcd(r_ans,v[i]);
             }
         }
-        else{
+        else
+        {
             cout << "Invalid Input";
             return 0;
         }
     }
     cout << "Total Points:" << endl;
-    if(first[0]){
+    if(first[0])
+    {
         cout << "Darrell: " << score[0] << "points" << endl;
         cout << "Sally: " << score[1] << "points" << endl;
     }
-    else if(first[1]){
+    else if(first[1])
+    {
         cout << "Sally: " << score[1] << "points" << endl;
         cout << "Darrell: " << score[0] << "points" << endl;
     }
     cout << "Game Result: ";
-    if(score[0] > score[1]){
+    if(score[0] > score[1])
+    {
         cout << "Darrell is winner";
     }
-    else if(score[0] < score[1]){
+    else if(score[0] < score[1])
+    {
         cout << "Sally is winner";
     }
-    else{
+    else
+    {
         cout << "Draw";
     }
 }
